@@ -51,7 +51,6 @@ describe('descryptCookie', () => {
       const key = crypto.randomBytes(keyLengthBytes)
       const encyptedStr = encryptCookie(originalStr, { algorithm, key })
 
-      decryptCookie(encyptedStr, { algorithm, key: crypto.randomBytes(keyLengthBytes) })
       expect(() => decryptCookie(encyptedStr, { algorithm, key: crypto.randomBytes(keyLengthBytes) })).toThrow()
     })
   }
